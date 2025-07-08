@@ -49,7 +49,7 @@ tiene_carnet = True
 if edad >= 18 and tiene_carnet:
   print("Puedes conducir 🚗")
 else:
-  print("POLICIA 🚔!!!1!!!")
+  print("POLICÍA 🚔!!!!!!!")
 
 # 🇻🇪 un pueblo de Isla Margarita
 if edad >= 18 or tiene_carnet:
@@ -104,27 +104,64 @@ if es_el_tres:
 
 print("\nLa condición ternaria:")
 # es una forma concisa de un if-else en una línea de código
-# [código si cumple la condición] if [condicion] else [codigo si no cumple]
+# [código si cumple la condición] if [condición] else [código si no cumple]
 
 edad = 17
 mensaje = "Es mayor de edad" if edad >= 18 else "Es menor de edad"
 print(mensaje)
 
 ###
-# EJERCICOS
+# EJERCICIOS
 ###
 
 # Ejercicio 1: Determinar el mayor de dos números
 # Pide al usuario que introduzca dos números y muestra un mensaje
 # indicando cuál es mayor o si son iguales
+num_1,num_2 = input("Ingresa 2 numeros separados por un espacio").split()
+
+if num_1 == num_2:
+  print("los numeros son iguales")
+elif num_1 > num_2:
+  print(num_1, "Es el numero mayor")
+elif num_2 > num_1:
+  print(num_2, "Es el numero mayor")
 
 # Ejercicio 2: Calculadora simple
 # Pide al usuario dos números y una operación (+, -, *, /)
 # Realiza la operación y muestra el resultado (maneja la división entre zero)
 
+num_3,num_4 = input("Ingresa 2 numeros separados por un espacio").split()
+num_3=int(num_3)
+num_4=int(num_4)
+operacion = input("¿Que operacion deseas realizar? (+, -, *, /)")
+
+if operacion == "+":
+  print("Resultado:",num_3 + num_4)
+elif operacion == "-":
+  print("Resultado:",num_3 - num_4)
+elif operacion == "*":
+  print("Resultado:",num_3 * num_4)
+elif operacion == "/":
+  if not num_4 == 0:
+    print("Resultado:",num_3 - num_4)
+  else:
+    print("no se puede dividir entre zero")
+else:
+  print("La operación",operacion,"no existe")
+  
 # Ejercicio 3: Año bisiesto
 # Pide al usuario que introduzca un año y determina si es bisiesto.
 # Un año es bisiesto si es divisible por 4, excepto si es divisible por 100 pero no por 400.
+ 
+year = int(input("Ingresa un año:"))
+
+if type(year/4) == "int" and type(year/100) ==  "float":
+  print(year, "Es un año bisiesto")
+elif type(year/400) == "int" and type(year/100) ==  "int":
+  print(year, "Es un año bisiesto")
+else:
+  print (year, "No es un año bisiesto")
+
 
 # Ejercicio 4: Categorizar edades
 # Pide al usuario que introduzca una edad y la clasifique en:
@@ -133,3 +170,16 @@ print(mensaje)
 # - Adolescente (13-17 años)
 # - Adulto (18-64 años)
 # - Adulto mayor (65 años o más)
+
+edad = int(input("Introduce una edad:"))
+
+if edad >= 0 and edad <=2:
+  print("Bebé")
+elif edad >= 3 and edad <=12:
+  print("Niño")
+elif edad >= 13 and edad <=17:
+  print("Adolescente")
+elif edad >= 18 and edad <=64:
+  print("Adulto")
+elif edad >= 65:
+  print("Adulto Mayor")
